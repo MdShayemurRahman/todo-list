@@ -23,6 +23,7 @@
     "helmet": "^4.6.0",
     "morgan": "^1.10.0"
   },
+  "type": "module",
   "devDependencies": {
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",

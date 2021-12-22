@@ -1,15 +1,21 @@
-const express = require('express');
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
+import {
+  getAll,
+  getById,
+  postData,
+  updateData,
+  deleteData,
+} from "./controller.js";
 
-const emojis = require('./emojis');
+import express from "express";
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'API - 👋🌎🌍🌏'
-  });
-});
+router.get("/", getAll);
+router.get("/:id", getById);
+router.post("/", postData);
+router.put("/:id", updateData);
+router.delete("/:id", deleteData);
 
-router.use('/emojis', emojis);
-
-module.exports = router;
+export default router;
