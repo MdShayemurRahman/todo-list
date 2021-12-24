@@ -3,7 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
-
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -25,6 +25,13 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1", api);
+
+const url =
+  "mongodb+srv://todo:sayem@cluster0.kctko.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+mongoose.connect(url).then(() => {
+  console.log("Database Connected");
+});
 
 app.use(notFound);
 app.use(errorHandler);
