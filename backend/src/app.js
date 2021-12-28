@@ -11,6 +11,10 @@ import notFound from "./middlewares/notfound.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import api from "./api/index.js";
 
+
+import faker from "faker"; // import faker
+import fakerModel from "./Database/model.js";
+
 const app = express();
 
 app.use(morgan("dev"));
@@ -24,13 +28,47 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/api/v1/task/random", async (req, res) => {
+  let todos = await fakerModel.find();
+  res.json(todos);
+});
+
+app.post("/api/v1/task/random", (req, res) => {
+  for (let i = 0; i < 3; i++) {
+    let fakeTask = new fakerModel({
+      title: faker.hacker.phrase(),
+    });
+    fakeTask.save((err, data) => {
+      if (err) {
+        console.error(err);
+      }
+    });
+  }
+});
+
+app.post("/api/v1/task/random/add", async (req, res) => {
+  const addData = req.body;
+  const newData = new fakerModel(addData);
+
+  try {
+    await newData.save();
+    res.send("successfully stored data");
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.use("/api/v1", api);
 
 const url =
   "mongodb+srv://todo:sayem@cluster0.kctko.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-mongoose.connect(url).then(() => {
-  console.log("Database Connected");
+mongoose.connect(url, { useNewUrlParser: true }).then(() => {
+  try {
+    console.log("Database Connected");
+  } catch (error) {
+    console.log("error in connection");
+  }
 });
 
 app.use(notFound);
