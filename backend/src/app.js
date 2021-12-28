@@ -11,7 +11,6 @@ import notFound from "./middlewares/notfound.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import api from "./api/index.js";
 
-
 import faker from "faker"; // import faker
 import fakerModel from "./Database/model.js";
 
@@ -28,22 +27,15 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/api/v1/task/random", async (req, res) => {
-  let todos = await fakerModel.find();
-  res.json(todos);
-});
-
 app.post("/api/v1/task/random", (req, res) => {
+  let fakeTask = [];
   for (let i = 0; i < 3; i++) {
-    let fakeTask = new fakerModel({
+    let genTitle = new fakerModel({
       title: faker.hacker.phrase(),
     });
-    fakeTask.save((err, data) => {
-      if (err) {
-        console.error(err);
-      }
-    });
+    fakeTask.push(genTitle);
   }
+  res.json(fakeTask);
 });
 
 app.post("/api/v1/task/random/add", async (req, res) => {

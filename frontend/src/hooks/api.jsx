@@ -3,7 +3,7 @@ import axios from "axios";
 let URL = "http://localhost:5000/api/v1/task/random";
 
 export const getRandomTask = async () => {
-  return await axios.get(URL);
+  return await axios.post(URL);
 };
 
 export const generateTodos = async () => {
