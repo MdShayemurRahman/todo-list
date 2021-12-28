@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Button from "@material-ui/core/Button";
+import { DeleteForeverOutlined, EditOutlined } from "@material-ui/icons";
 
 import { getRandomTask } from "../hooks/api";
 
@@ -14,10 +16,20 @@ const TodoList = () => {
     setTodo(response.data);
   };
 
+  const deleteById = async (id) => {
+    let updatedTodo = [...todo].filter((res) => res._id !== id);
+    setTodo(updatedTodo);
+  };
+
   return (
     <div>
-      {todo.map((res) => (
-        <li>{res.title}</li>
+      {todo.map((res, index) => (
+        <>
+          <li>{res.title}</li>
+          <Button onClick={() => deleteById(res._id)}>
+            <DeleteForeverOutlined color="secondary" />
+          </Button>
+        </>
       ))}
     </div>
   );
