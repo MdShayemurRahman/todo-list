@@ -24,12 +24,14 @@ const TodoList = () => {
   return (
     <div>
       {todo.map((res, index) => (
-        <>
-          <li>{res.title}</li>
-          <Button onClick={() => deleteById(res._id)}>
-            <DeleteForeverOutlined color="secondary" />
-          </Button>
-        </>
+        <div>
+          <div className="container">
+            <li>{res.title}</li>
+            <Button onClick={() => deleteById(res._id)} variant="outlined" className="btn">
+              <DeleteForeverOutlined color="secondary" />
+            </Button>
+          </div>
+        </div>
       ))}
     </div>
   );

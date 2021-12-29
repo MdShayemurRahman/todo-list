@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: crimson;
+  background-color: rgb(20, 107, 220);
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -13,4 +13,17 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 6px;
+  margin: 2%;
+}
+
+.container:hover {
+  background: rgb(12, 224, 30);
 }
