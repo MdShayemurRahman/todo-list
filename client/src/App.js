@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import data from "./Data/data";
 import "./App.css";
@@ -9,8 +10,8 @@ const App = () => {
   const [todos, setTodos] = React.useState(data);
 
   const handleNewTodo = (newTodo) => {
-  
     setTodos([...todos, newTodo]);
+    console.log(todos);
   };
 
   return (

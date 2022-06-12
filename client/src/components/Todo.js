@@ -1,11 +1,13 @@
 import React from "react";
 
 const Todo = (props) => {
+  const {task, desc} = props.todo;
+
   return (
     <article>
       <div>
-        <h3>{props.todo.task}</h3>
-        <p>{props.todo.desc}</p>
+        <h3>{task}</h3>
+        <p>{desc}</p>
       </div>
       <div>
         <button>
