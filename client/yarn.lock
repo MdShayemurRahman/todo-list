@@ -1745,7 +1745,7 @@
   "resolved" "https://registry.npmjs.org/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-2.2.3.tgz"
   "version" "2.2.3"
   dependencies:
-    "ejs" "^3.1.6"
+    "ejs" "^3.1.7"
     "json5" "^2.2.0"
     "magic-string" "^0.25.0"
     "string.prototype.matchall" "^4.0.6"
@@ -4033,7 +4033,7 @@
   "resolved" "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
   "version" "1.1.1"
 
-"ejs@^3.1.6":
+"ejs@^3.1.7":
   "integrity" "sha512-/sXZeMlhS0ArkfX2Aw780gJzXSMPnKjtspYZv+f3NiKLlubezAHDU5+9xz6gd3/NhG3txQCo6xlglmTS+oTGEQ=="
   "resolved" "https://registry.npmjs.org/ejs/-/ejs-3.1.8.tgz"
   "version" "3.1.8"
@@ -6154,7 +6154,7 @@
   "resolved" "https://registry.npmjs.org/json5/-/json5-2.1.1.tgz"
   "version" "2.1.1"
   dependencies:
-    "minimist" "^1.2.0"
+    "minimist" "^1.2.6"
 
 "json5@^2.1.2", "json5@^2.2.0", "json5@^2.2.1":
   "integrity" "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA=="
@@ -6515,12 +6515,7 @@
   dependencies:
     "brace-expansion" "^2.0.1"
 
-"minimist@^1.2.0":
-  "integrity" "sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ="
-  "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz"
-  "version" "1.2.0"
-
-"minimist@^1.2.6":
+"minimist@^1.2.0", "minimist@^1.2.6":
   "integrity" "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   "version" "1.2.6"
@@ -6560,7 +6555,7 @@
     "dns-packet" "^5.2.2"
     "thunky" "^1.0.2"
 
-"nanoid@^3.3.4":
+"nanoid@^3.1.31":
   "integrity" "sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw=="
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   "version" "3.3.4"
@@ -7577,7 +7572,7 @@
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.14.tgz"
   "version" "8.4.14"
   dependencies:
-    "nanoid" "^3.3.4"
+    "nanoid" "^3.1.31"
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.2"
 
